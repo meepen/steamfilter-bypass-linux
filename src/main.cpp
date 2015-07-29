@@ -85,6 +85,12 @@ int main(int argc, char *argv[])
 
 
   if(argc != 2) { printf("Not correct argumento\n"); return 1; }
+  
+  // sig is easy to find: 
+  // first search for youtube.com in friendsui
+  // next, go to the array it's referenced in
+  // lastly click the xref of the array!
+  // the start of the function is what this sig is!
   const char *sig = "\x55"
   "\x57"
   "\x56"
@@ -135,6 +141,8 @@ int main(int argc, char *argv[])
         {
           long write = i - strlen(sig) + 1;
 
+          // mov eax, 1 
+          // retn
           if(!writemem(f, write, (void *)"\xB8\x01\x00\x00\x00\xC3", 6))
           {
             printf("NO WRITE!!\n");
