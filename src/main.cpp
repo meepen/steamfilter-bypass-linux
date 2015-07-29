@@ -2,9 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <fstream>
-#include <sys/uio.h>
-#include <sys/ptrace.h>
-#include <sys/wait.h>
 
 struct memory
 {
